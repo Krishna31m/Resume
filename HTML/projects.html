@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Krishna</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+        animation: bgAnimation 20s ease infinite;
+        background-size: 800% 800%;
+        margin-top: 130px;
+        color: #1c1b2f;
+      }
+
+      @keyframes bgAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1.5rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 1rem 1rem;
+      }
+
+      .logo {
+        font-size: 26px;
+        font-weight: bold;
+        color: #2c3e50;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #fff;
+        }
+        to {
+          text-shadow: 0 0 20px #4e73df, 0 0 30px #4e73df;
+        }
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #1c5db4;
+      }
+
+      .section-heading {
+        text-align: center;
+        padding: 40px 20px 10px;
+      }
+
+      .section-heading h1 {
+        font-size: 36px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .square-icon {
+        width: 16px;
+        height: 16px;
+        background-color: #1c5db4;
+      }
+
+      .section-heading h4 {
+        color: #666;
+        margin-top: 10px;
+        font-weight: 400;
+      }
+
+      .card {
+        max-width: 1000px;
+        margin: 30px auto;
+        background: #fff;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 30px;
+      }
+
+      .card .left,
+      .card .right {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .card h3 {
+        color: #153f82;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .card ul {
+        margin-top: 15px;
+        padding-left: 20px;
+        color: #444;
+      }
+
+      .card li {
+        margin-bottom: 10px;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 5rem;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1.5rem 2rem;
+        }
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+        }
+        .card {
+          flex-direction: column;
+          padding: 20px;
+        }
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: -60px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🔷 Krishna / B.Tech CSE</div>
+        <ul class="nav-links">
+          <li><a href="/index.html">About Me</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="Certification.html">Certifications</a></li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="skills.html">Skills & Tech</a>
+              <a href="experience.html">Experience</a>
+              <a href="blog.html">Blog & YouTube</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="section-heading">
+      <h1><span class="square-icon"></span> Projects</h1>
+      <h4>A glimpse into my latest work</h4>
+    </div>
+
+    <!-- Project 1: Event Hub -->
+    <div class="card">
+      <div class="left">
+        <h3>📱 Event Hub – Android App</h3>
+        <p>
+          An event booking app with UPI and QR payments. Users can view events,
+          choose seats, and receive tickets after payment.
+        </p>
+        <ul>
+          <li>🎫 Event detail display with booking options</li>
+          <li>💰 UPI payment integration</li>
+          <li>📷 QR code payment with countdown</li>
+          <li>🔐 Manual transaction ID verification</li>
+          <li>📄 Ticket generation with metadata</li>
+          <li>⏱️ Timestamped confirmation</li>
+        </ul>
+        
+        <p>
+          <strong>Tech Used:</strong> Kotlin, Android Studio, View Binding, UPI
+          Intent
+        </p> <br>
+        <a href="https://github.com/Krishna31m/ALLFILE/tree/main/Event%20hub" target="_blank">Github</a>
+      </div>
+      <div class="right">
+        <img src="eventhub.jpg" alt="Event Hub UI" />
+      </div>
+    </div>
+
+    <!-- Project 2: Sustainable Development Web -->
+    <div class="card">
+      <div class="left">
+        <h3>🌱 Three Pillars of Sustainable Development – Web App</h3>
+        <p>
+          A responsive web app to promote environmental, economic, and social
+          sustainability through engaging visuals and real-world examples.
+        </p>
+        <ul>
+          <li>🌍 Environmental: Conservation, renewable energy</li>
+          <li>💼 Economic: Green economy, innovation</li>
+          <li>🤝 Social: Education, equity, community</li>
+        </ul>
+        <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, Responsive UI</p><br>
+        <a href="https://github.com/Krishna31m/ALLFILE/tree/main/Sustainableweb" target="_blank">Github</a>
+      </div>
+      <div class="right">
+        <img src="pillar.jpg" alt="Sustainable Project UI" />
+      </div>
+    </div>
+
+    <!-- Project 2: Sustainable Development Web -->
+    <div class="card">
+      <div class="left">
+        <h3>SudokuSolver – Web App</h3>
+        <p>
+          A responsive web app to solve sudoku puzzle in veri efficiently.
+        </p>
+        <ul>
+          <li>Real-time grid input for custom puzzles</li>
+          <li>Solve button that triggers the backtracking algorithm</li>
+          <li>Visual update of solution on the grid</li>
+          <li>Clear/reset functionality</li>
+        </ul>
+        <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, Responsive UI</p><br>
+        <a href="https://github.com/Krishna31m/SudokuSolver" target="_blank">Github </a>
+      </div>
+      <div class="right">
+        <img src="sudoku.png" alt="SudokuSolver"/>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Krishna | Designed with 💙 for Portfolio Showcase</p>
+    </footer>
+  </body>
+</html>

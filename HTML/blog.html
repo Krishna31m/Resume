@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        z-index: 1000;
+      }
+      body {
+        background-color: #ffffff;
+        background-size: 800% 800%;
+        animation: bgAnimation 20s ease infinite;
+        color: #222;
+        margin-top: 150px;
+      }
+
+      @keyframes bgAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 1rem 1rem;
+      }
+
+      .navbar .logo {
+        font-weight: bold;
+        font-size: 26px;
+        color: #2c3e50;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #fff;
+        }
+        to {
+          text-shadow: 0 0 20px #4e73df, 0 0 30px #4e73df;
+        }
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: -60px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .section-heading {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #ffffff;
+      }
+
+      .section-heading h1 {
+        font-size: 48px;
+        color: #1f1f3e;
+        font-weight: 700;
+        margin-bottom: 40px;
+        line-height: 1.2;
+      }
+
+      .paragraph-block {
+        background-color: #ffffff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .paragraph-block p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #1f1f3e;
+        margin: 0;
+      }
+
+      /* blog section */
+
+      .blog-section {
+        text-align: center;
+        padding: 30px;
+        background-color: #f8f9fa;
+      }
+
+      .blog-section a {
+        color: #1f1f3e;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      .carousel-container {
+        perspective: 1000px;
+        width: 400px;
+        height: 260px;
+        margin: 40px auto;
+        position: relative;
+      }
+
+      .carousel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+
+      .carousel img {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      /* youtube */
+      .youtube-section {
+        text-align: center;
+        padding: 50px;
+        background-color: #f8f9fa;
+        color: #1f1f3e;
+        margin-top: 200px;
+      }
+
+      .youtube-section h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .youtube-section a {
+        color: #1f1f3e;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .youtube-video {
+        margin-top: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🔷 Krishna / B.Tech CSE</div>
+        <ul class="nav-links">
+          <li><a href="/index.html">About Me</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="Certification.html">Certifications</a></li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="skills.html">SKILLS | TECHNOLOGY</a>
+              <a href="experience.html">EXPERIENCE</a>
+              <a href="blog.html">BLOG AND YOUTUBE CHANNEL</a>
+              <a href="contact.html">CONTACT</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="section-heading">
+      <h1>
+        My Blog and YouTube <br />
+        Channel
+      </h1>
+      <div class="paragraph-block">
+        <p>
+          Welcome to my creative space, where I share insights, ideas, and
+          expertise through my blog and YouTube channel. My blog dives into
+          thought-provoking topics, offering tips, reflections, and in-depth
+          articles, while my YouTube channel brings concepts to life with
+          engaging visuals and tutorials. Together, they serve as platforms to
+          inspire, educate, and connect with a wider audience, blending
+          creativity with meaningful content.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-section">
+      <h1>Blog</h1>
+      <p>
+        Link to my Photography:
+        <a href="https://www.instagram.com/love_and_nature23?igsh=N285eGt2bjNlMDY4" target="_blank">Nature Photography</a>
+      </p>
+
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <img src="squarrel.jpg" alt="Blog 1" />
+          <img src="yelloflower.jpg" alt="Blog 2" />
+          <img src="cutepuppy.jpg" alt="Blog 3" />
+          <img src="umbrellaflower.jpg" alt="Blog 4" />
+          <!-- Add more as needed -->
+        </div>
+      </div>
+
+      <button onclick="rotateCarousel()">Rotate</button>
+    </div>
+
+    <!-- youtube -->
+
+    <div class="youtube-section">
+      <h1>My YouTube Channel</h1>
+      <p>
+        Link to my YouTube Channel: <br />
+        <a href="https://www.youtube.com/@tourwithkrishna" target="_blank">
+          https://www.youtube.com/@tourwithkrishna
+        </a>
+      </p>
+
+      <div class="youtube-video">
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/uTC6zXNzgWI?si=f9Lwz7dbNyOeQZA5"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </body>
+  <!-- script for rotating -->
+
+  <script>
+    const carousel = document.getElementById("carousel");
+    const images = carousel.getElementsByTagName("img");
+    const total = images.length;
+    const radius = 360; // Distance from center
+    let angle = 0;
+
+    // Place each image in 3D circle
+    function setupCarousel() {
+      for (let i = 0; i < total; i++) {
+        const rotateY = (360 / total) * i;
+        images[
+          i
+        ].style.transform = `rotateY(${rotateY}deg) translateZ(${radius}px)`;
+      }
+    }
+
+    function rotateCarousel() {
+      angle += 360 / total;
+      carousel.style.transform = `rotateY(${angle}deg)`;
+    }
+
+    setupCarousel(); // Call once at start
+    setInterval(rotateCarousel, 3000); // Spins every 3s
+  </script>
+
+  <!--   ******************************************footer ***************************8 -->
+  <style>
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    .footer-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-content ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    .footer-content ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-content ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-media {
+      text-align: right;
+    }
+
+    .social-icon {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p>&copy; 2025 Krishna Kumar Mukhiya. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a
+          href="facebook.com/krishna.mukhiya.1675?mibextid=ZbWKwL"
+          class="social-icon"
+          target="_blank">Facebook</a
+        >
+        <a
+          href="twitter.com/Krishna27448319?t=OByvX2_eNf99TzY4g_04pQ&s=09"
+          class="social-icon"
+          target="_blank">Twitter</a
+        >
+        <a href="https://instagram.com/me_ikrishna" class="social-icon"
+        target="_blank">Instagram</a
+        >
+      </div>
+    </div>
+  </footer>
+</html>

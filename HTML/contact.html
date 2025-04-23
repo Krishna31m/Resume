@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        z-index: 1000;
+      }
+      body {
+        background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+        background-size: 800% 800%;
+        animation: bgAnimation 20s ease infinite;
+        color: #222;
+        margin-top: 250px;
+        /* Center flex container only for main content below nav */
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 1rem 1rem;
+      }
+
+      .navbar .logo {
+        font-weight: bold;
+        font-size: 26px;
+        color: #2c3e50;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #fff;
+        }
+        to {
+          text-shadow: 0 0 20px #4e73df, 0 0 30px #4e73df;
+        }
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: -60px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      /* Centering the form container */
+      .contact-form-container {
+        background: #a88484;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        transition: transform 0.3s ease;
+        margin: 5rem auto; /* centers horizontally */
+      }
+
+      .contact-form-container:hover {
+        transform: translateY(-10px);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        position: relative;
+        color: #fff;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: #0072ff;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-size: 1rem;
+        color: #f0f0f0;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: #0072ff;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 114, 255, 0.5);
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background-color: #0072ff;
+        color: white;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056cc;
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 600px) {
+        .contact-form-container {
+          padding: 20px;
+          margin: 3rem auto;
+        }
+        .navbar {
+          padding: 1rem 2rem;
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🔷 Krishna / B.Tech CSE</div>
+        <ul class="nav-links">
+          <li><a href="/index.html">About Me</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="Certification.html">Certifications</a></li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="skills.html">SKILLS | TECHNOLOGY</a>
+              <a href="experience.html">EXPERIENCE</a>
+              <a href="blog.html">BLOG AND YOUTUBE CHANNEL</a>
+              <a href="contact.html">CONTACT</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contact-form-container">
+      <h2>Contact - Us</h2>
+      <form action="https://formspree.io/f/xanegkjj" method="POST">
+        <div class="input-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Type your message..."
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </body>
+  <style>
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    .footer-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-content ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    .footer-content ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-content ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-media {
+      text-align: right;
+    }
+
+    .social-icon {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p>&copy; 2025 Krishna Kumar Mukhiya. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a
+          href="facebook.com/krishna.mukhiya.1675?mibextid=ZbWKwL"
+          class="social-icon"
+          target="_blank">Facebook</a
+        >
+        <a
+          href="twitter.com/Krishna27448319?t=OByvX2_eNf99TzY4g_04pQ&s=09"
+          class="social-icon"
+          target="_blank">Twitter</a
+        >
+        <a href="https://instagram.com/me_ikrishna" class="social-icon"
+        target="_blank">Instagram</a
+        >
+      </div>
+    </div>
+  </footer>
+</html>
