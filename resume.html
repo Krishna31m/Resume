@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        z-index: 1000;
+      }
+      body {
+        background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+        background-size: 800% 800%;
+        animation: bgAnimation 20s ease infinite;
+        color: #222;
+        margin-top: 150px;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 1rem 1rem;
+      }
+
+      .navbar .logo {
+        font-weight: bold;
+        font-size: 26px;
+        color: #2c3e50;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #fff;
+        }
+        to {
+          text-shadow: 0 0 20px #4e73df, 0 0 30px #4e73df;
+        }
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .section-heading {
+        padding: 40px 20px;
+        animation: bgAnimation 20s ease infinite;
+        background-size: 800% 800%;
+        color: #222;
+        text-align: center;
+      }
+
+      .section-heading h1 {
+        font-size: 36px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .square-icon {
+        width: 18px;
+        height: 18px;
+        background-color: #1c5db4;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      .experience-section,
+      .education-section {
+        animation: bAnimation 20s ease infinite;
+        background-size: 800% 800%;
+        color: #222;
+      }
+
+      .section-title {
+        max-width: 1000px;
+        margin: 0 auto 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+        color: #1c1b2f;
+      }
+
+      .download-btn {
+        background-color: #1c5db4;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s ease;
+      }
+
+      .download-btn:hover {
+        background-color: #153f82;
+      }
+
+      .card {
+        max-width: 1000px;
+        background: #fdfdfd;
+        margin: 20px auto;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .card .left,
+      .card .right {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .card .left h3 {
+        font-size: 20px;
+        color: #153f82;
+        margin-bottom: 10px;
+      }
+
+      .card .left p,
+      .card .right p {
+        font-size: 15px;
+      }
+
+      .card ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+
+      .card li {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+        }
+
+        .section-title {
+          flex-direction: column;
+          gap: 15px;
+          align-items: flex-start;
+        }
+
+        .card {
+          flex-direction: column;
+        }
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: -60px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🔷 Krishna / B.Tech CSE</div>
+        <ul class="nav-links">
+          <li><a href="/index.html">About Me</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="Certification.html">Certifications</a></li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="skills.html">SKILLS | TECHNOLOGY</a>
+              <a href="experience.html">EXPERIENCE</a>
+              <a href="blog.html">BLOG AND YOUTUBE CHANNEL</a>
+              <a href="contact.html">CONTACT</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="section-heading">
+      <h1><span class="square-icon"></span> Resume</h1>
+    </div>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <a
+          href="https://drive.google.com/file/d/1X0KW5nT2q_58XH9WORxHQOQl8zx9UbO5/view"
+          class="download-btn"
+          download
+          >Download CV</a
+        >
+      </div>
+
+      <div class="card">
+        <div class="left">
+          <h3>May 2024 - July 2024</h3>
+          <p>GeekForGeeks<br />Data Structure and Algorithm</p>
+        </div>
+        <div class="right">
+          <p><strong>💼 Data Structures & Algorithms Internship</strong></p>
+          <ul>
+            <li>
+              Developed a Sudoku Solver using HTML, CSS & JavaScript
+              implementing backtracking algorithm.
+            </li>
+            <li>
+              Built a responsive UI to enhance puzzle-solving interaction.
+            </li>
+            <li>
+              Optimized performance for handling complex grids in real-time.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="left">
+          <h3>Jan 2023 - April 2024</h3>
+          <p>Content Manager<br />University Website</p>
+        </div>
+        <div class="right">
+          <p><strong>🌐 Content Manager – University Website</strong></p>
+          <ul>
+            <li>
+              Maintained academic content updates across departments ensuring
+              consistency and compliance.
+            </li>
+            <li>
+              Streamlined workflows by collaborating with student and admin
+              teams.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+
+      <div class="card">
+        <div class="left">
+          <h3>2022–2026</h3>
+          <p>Lovely Professional University<br />Phagwara, Punjab</p>
+        </div>
+        <div class="right">
+          <p><strong>B.Tech in Computer Science & Engineering</strong></p>
+          <ul>
+            <li>CGPA: 5.44 / 10</li>
+            <li>Core subjects: DSA, DBMS, OS, CN, Web Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***************** Language Section ******************* -->
+    <style>
+      .language-section {
+        padding: 60px 20px;
+        background-size: 800% 800%;
+        animation: bgAnimation 20s ease infinite;
+        font-family: "Arial", sans-serif;
+        color: #222;
+      }
+
+      .language-header {
+        max-width: 1000px;
+        margin: 0 auto 30px auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .language-header h2 {
+        font-size: 32px;
+        color: #1c1b2f;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .language-header h2::before {
+        content: "🌐";
+        margin-right: 10px;
+      }
+
+      .language-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+      }
+
+      .language-list ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .language-list li {
+        background-color: #eaf7ff;
+        padding: 15px 20px;
+        border-radius: 8px;
+        color: #1c1b2f;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+      }
+
+      .language-list li::before {
+        content: "🗣️";
+        margin-right: 10px;
+      }
+    </style>
+
+    <section class="language-section">
+      <div class="language-header">
+        <h2>Languages</h2>
+      </div>
+      <div class="language-list">
+        <ul>
+          <li>English - Fluent</li>
+          <li>Hindi - Fluent</li>
+          <li>Bhojpuri - Fluent</li>
+          <li>Maithili - Native</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+  <style>
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    .footer-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-content ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    .footer-content ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-content ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-media {
+      text-align: right;
+    }
+
+    .social-icon {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p>&copy; 2025 Krishna Kumar Mukhiya. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a
+          href="facebook.com/krishna.mukhiya.1675?mibextid=ZbWKwL"
+          class="social-icon"
+          >Facebook</a
+        >
+        <a
+          href="twitter.com/Krishna27448319?t=OByvX2_eNf99TzY4g_04pQ&s=09"
+          class="social-icon"
+          >Twitter</a
+        >
+        <a href="https://instagram.com/me_ikrishna" class="social-icon"
+          >Instagram</a
+        >
+      </div>
+    </div>
+  </footer>
+</html>
